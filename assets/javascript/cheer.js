@@ -1,272 +1,3 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>CHEER Co-op Signup Form</title>
-        <meta charset="iso-8859-1"/>
-        <style type='text/css'>
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,b, u, i, center,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after, q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
-html, body {
-}
-body {
-    background-color: #FFF;
-    font-family: Arial, Helvetica, sans-serif;
-    position: relative;
-}
-div#wrapper {
-    position: relative;
-    margin:0 auto;
-    height:100%;
-    color:#1C1733;
-    width: 760px;
-    border-bottom: 0;
-    border-top: 0;
-}
-div#topknot {
-    width:100%;
-    height:50px;
-    background: url('pencils.png') #4A6BA2;
-    background-size: 8%;
-    margin-bottom: 20px;
-}
-div#header {
-    background-color: #F9EFB1;
-    font-size: 30px;
-    font-weight: bold;
-    text-align: center;
-    padding:30px 0px;
-    height: 40px;
-    border:1px solid #AAA;
-    -webkit-box-shadow: 4px 4px 5px rgba(50, 50, 50, 0.75);
-    -moz-box-shadow:    4px 4px 5px rgba(50, 50, 50, 0.75);
-    box-shadow:         4px 4px 5px rgba(50, 50, 50, 0.75);
-    margin-bottom: 20px;
-}
-div#countdown {
-    position: absolute;
-    font-size: 20px;
-    text-align: center;
-    padding:5px 30px;
-    top:200px;
-    left:-100px;
-    width:900px;
-    line-height: 1.5;
-    font-weight: bold;
-    height: 60px;
-    border:1px solid #000;
-    background-color: #A64B4B;
-}
-div#countdown span#remaining {
-    font-size: 21px;
-    font-family: Courier New,monospace;
-    margin-left:15px;
-}
-div#message {
-    font-size: 16px;
-    color:#FF0000;
-    height:5px;
-    margin-bottom: 30px;
-    text-align: center;
-    font-weight: bold;
-}
-div#message > a {
-    color:inherit;
-}
-form#ss-form {
-    padding:20px 30px 20px;
-    border:1px solid #AAA;
-    background-color: #F9EFB1;
-    -webkit-box-shadow: 4px 4px 5px rgba(50, 50, 50, 0.75);
-    -moz-box-shadow:    4px 4px 5px rgba(50, 50, 50, 0.75);
-    box-shadow:         4px 4px 5px rgba(50, 50, 50, 0.75);
-}
-div#child_entries {
-	margin-top: 5px;
-    display: none;
-}
-div.form-entry {
-    margin-top: 10px;
-    width:100%;
-}
-div.form-entry label {
-    color:#112233;
-    font-size: 14px;
-    line-height: 1.5;
-}
-div.form-entry label.title {
-    vertical-align: bottom;
-    margin-right: 10px;
-    display: block;
-    width: 140px;
-    float: left;
-    text-align: right;
-}
-div.form-entry.child label.title {
-    width:200px;
-}
-div.form-entry textarea {
-    margin-left: 150px;
-}
-div.form-entry.child textarea {
-    margin-left: 0px;
-}
-div.form-entry label.directions {
-    display: block;
-    margin-left:150px;
-}
-.required:after {
-    content: '*';
-    color:#FF0000;
-}
-div.form-entry input,div.form-entry select {
-    width:220px;
-}
-#phones {
-    border:2px solid #AAA;
-    margin:10px 0;
-    padding:4px 5px 10px;
-}
-.child_entry {
-    border:1px solid #000;
-    margin: 30px auto;
-    width:600px;
-    background: #FFF;
-    padding:0px 20px 15px;
-}
-.child_entry > .legend {
-    position: relative;
-    text-align: center;
-    width:80px;
-    top:-20px;
-    left:-10px;
-    border:1px solid #000;
-    background-color: #CCA383;
-    padding:6px;
-    font-weight: bold;
-}
-label.required.error, label.error {
-    color: #FF0000 !important;
-}
-input[type='submit'] {
-    font-size: 20px;
-    display: block;
-    margin: 50px auto;
-
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 14px;
-	color: #000000;
-	padding: 8px 20px;
-	background: -moz-linear-gradient(
-		top,
-		#fce2a1 0%,
-		#ff7700);
-	background: -webkit-gradient(
-		linear, left top, left bottom,
-		from(#fce2a1),
-		to(#ff7700));
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
-	border-radius: 10px;
-	border: 1px solid #AAA;
-	-moz-box-shadow:
-		0px 1px 3px rgba(000,000,000,0.5),
-		inset 0px 0px 5px rgba(153,77,11,0.6);
-	-webkit-box-shadow:
-		0px 1px 3px rgba(000,000,000,0.5),
-		inset 0px 0px 5px rgba(153,77,11,0.6);
-	box-shadow:
-		0px 1px 3px rgba(000,000,000,0.5),
-		inset 0px 0px 5px rgba(153,77,11,0.6);
-	text-shadow:
-		0px -1px 3px rgba(255,255,255,0.8),
-		0px 1px 0px rgba(255,255,255,0.3);
-}
-div#course_description {
-    position: absolute;
-    display: none;
-    padding:3px;
-    width:200px;
-    border:2px solid #CCA383;
-    -moz-border-radius:8px;
-    -webkit-border-radius:8px;
-    border-radius:8px;
-    background-color: #FFF;
-}
-#overlay {
-    background-color: #000;
-    position: absolute;
-    left:0px;
-    top:0px;
-    width:100%;
-    height: 100%;
-    text-align: center;
-    opacity: 0.3;
-    z-index: 1000;
-    display: none;
-}
-#summary {
-    position: absolute;
-    display: none;
-    height: 500px;
-    width:600px;
-    background-color: #F9EFB1;
-    border: 3px solid #777;
-    z-index: 1001;
-    font-size: 14px;
-    padding:20px 10px;
-}
-#courses {
-    border:1px solid #AAA;
-    padding:5px;
-    width:100%;
-    margin:20px 4px;
-}
-#courses thead {
-    font-weight: bold;
-}
-#courses td.name {
-    overflow: hidden;
-    font-size: 12px;
-    width: 100px;
-    margin-top: 5px;
-}
-#courses td.choice {
-    overflow: hidden;
-    font-size: 12px;
-    width: 120px;
-}
-        </style>
-        <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
-        <script type='text/javascript' src='moment.min.js'></script>
-        <script type='text/javascript'>
 var $firstPeriod=$("<select></select>");
 var $secondPeriod=$("<select></select>");
 var $grade=$("<select></select>").append("<option value='-1'>Choose a grade...</option>").append("<option value='P'>Preschool</option>").append("<option value='K'>Kindergarten</option>").append("<option value='1'>First</option>").append("<option value='2'>Second</option>").append("<option value='3'>Third</option>").append("<option value='4'>Fourth</option>").append("<option value='5'>Fifth</option>").append("<option value='6'>Sixth</option>").append("<option value='7'>Seventh</option>").append("<option value='8'>Eighth</option>").append("<option value='9'>Ninth</option>").append("<option value='10'>Tenth</option>").append("<option value='11'>Eleventh</option>").append("<option value='12'>Twelfth</option>");
@@ -286,87 +17,6 @@ function GetFirstPeriod(data) {
 function GetSecondPeriod(data) {
     ParseGoogleDocData(data,$secondPeriod);
 }
-        </script>
-        <script type='text/javascript' src='https://spreadsheets.google.com/feeds/list/0Avsje_1JuEHmdEtQYXZ4MGw0U0ZYYUx1RlhiVGtuTEE/od6/public/basic?alt=json-in-script&callback=GetFirstPeriod'></script>
-        <script type='text/javascript' src='https://spreadsheets.google.com/feeds/list/0Avsje_1JuEHmdHNxUFUyYUFtaXI2R1ZaREZ1ZXpUM2c/od6/public/basic?alt=json-in-script&callback=GetSecondPeriod'></script>
-    </head>
-
-    <body>
-        <div id='topknot'></div>
-        <div id='wrapper'>
-            <div id='header'>CHEER Co-op Signup - Spring 2013</div>
-            <div id='countdown'>
-                <p>Signup will begin <span id='begin'></span></p>
-                <p>Time remaining: <span id='remaining'></span></p>
-            </div>
-            <form action="https://docs.google.com/spreadsheet/formResponse?formkey=dEtNRWtQak5wZ2FPUjRjQzktNjdqb1E6MA&amp;ifq" method="POST" id="ss-form">
-                <div id='message'></div>
-                <p>Fields with a <span class='required'></span> are required.</p>
-                <div class="form-entry">
-                    <label class="title required" for="family_name">Family Name</label>
-                    <input type="text" value="" class="required" id="family_name"/>
-                </div>
-                <fieldset id='phones'>
-                    <legend><span class='required'></span>Must enter at least one</legend>
-                    <div class="form-entry">
-                        <label class="title" for="home_phone_number">Home Phone Number</label>
-                        <input type="text" value="" class="" id="home_phone_number"/>
-                    </div>
-                    <div class="form-entry">
-                        <label class="title" for="cell_phone_number">Cell Phone Number</label>
-                        <input type="text" value="" class="" id="cell_phone_number"/>
-                    </div>
-                </fieldset>
-                <div class="form-entry">
-                    <label class="title" for="other_phone_number">Other Phone Number</label>
-                    <input type="text" value="" class="" id="other_phone_number"/>
-                </div>
-                <div class="form-entry">
-                    <label class="title" for="isTeaching">Teaching this Period?</label>
-                    <input type="checkbox" value="" class='' id="isTeaching"/>
-                </div>
-                <div class="form-entry">
-                    <label class="directions" for="notes">Would you like assist with any classes? If so, which ones?</label>
-                    <textarea rows='3' cols='55' class='' id="notes"></textarea>
-                </div>
-                <div class="form-entry">
-                    <label class="title required" for="number_children">Number of Children</label>
-                    <select class='required' id="number_children">
-                        <option value='-1'>Choose number of children...</option>
-                        <option value='1'>1</option>
-                        <option value='2'>2</option>
-                        <option value='3'>3</option>
-                        <option value='4'>4</option>
-                        <option value='5'>5</option>
-                        <option value='6'>6</option>
-                        <option value='7'>7</option>
-                        <option value='8'>8</option>
-                        <option value='9'>9</option>
-                        <option value='10'>10</option>
-                    </select>
-                </div>
-                <div id='child_entries'></div>
-                <input type="submit" onclick='return CheckFields();' name="submit" value="Submit"/>
-            </form>
-        </div>
-        <div id='overlay'></div>
-        <div id='summary'>
-            <p>You are enrolling the following students:</p>
-            <table cellpadding=4 id='courses'>
-                <thead>
-                    <td class='name'>Name</td>
-                    <td class='choice'>First Period</td>
-                    <td class='choice'>Second Period</td>
-                </thead>
-                <tbody></tbody>
-            </table>
-            <p>Is this correct?</p>
-            <button id='save' onclick='SubmitFields(true);'>Yes</button>
-            <button id='cancel' onclick='SubmitFields(false);'>No</button>
-        </div>
-        <div id='course_description'>
-        </div>
-        <script type='text/javascript'>
 var startDateTime=new Date(2013,0,31,9,0,0,0);
 var currentDateTime;
 var overlay;
@@ -409,11 +59,14 @@ function SubmitFields(correct) {
         return false;
     }
     var count=0;
-    var familyName=$('input#family_name').val();
+    var parentLastName=$('input#parent_last_name').val();
+    var parentFirstName=$('input#parent_first_name').val();
     var homeNumber=$('input#home_phone_number').val();
     var cellNumber=$('input#cell_phone_number').val();
     var otherNumber=$('input#other_phone_number').val();
     var isTeaching=$('input#isTeaching').attr('checked')==='checked';
+    var helpingPreferences=$('textarea#helping_preferences').val();
+    var notesCommittee=$('textarea#notes_committee').val();
     var notes=$('textarea#notes').val();
     var numberChildren=$('select#number_children').val();
     for (var index=0;index<numberChildren;index++) {
@@ -431,11 +84,13 @@ function SubmitFields(correct) {
                 type:'POST',
                 url:'ProcessSubmit.php',
                 data:{
-                    'familyName':encodeURIComponent(familyName),
+                    'parentLastName':encodeURIComponent(parentLastName),
+                    'parentFirstName':encodeURIComponent(parentFirstName),
                     'homeNumber':encodeURIComponent(homeNumber),
                     'cellNumber':encodeURIComponent(cellNumber),
                     'otherNumber':encodeURIComponent(otherNumber),
                     'isTeaching':encodeURIComponent(isTeaching),
+                    'notesCommittee':encodeURIComponent(notesCommittee),
                     'notes':encodeURIComponent(notes),
                     'numberChildren':encodeURIComponent(numberChildren),
                     'childName':encodeURIComponent(childName),
@@ -595,6 +250,3 @@ jQuery(function($){
     overlay=$('#overlay');
     summary=$('#summary');
 });
-        </script>
-    </body>
-</html>

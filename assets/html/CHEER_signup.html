@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CHEER Co-op Signup Form</title>
+        <meta charset="iso-8859-1"/>
+	<link type='text/css' rel='stylesheet' href='../css/cheer.css'/>
+        <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
+        <script type='text/javascript' src='../javascript/moment.min.js'></script>
+    </head>
+    <body>
+        <div id='topknot'></div>
+        <div id='wrapper'>
+            <div id='header'>CHEER Co-op Signup - Fall 2013</div>
+            <div id='countdown'>
+                <p>Signup will begin <span id='begin'></span></p>
+                <p>Time remaining: <span id='remaining'></span></p>
+            </div>
+            <form action="https://docs.google.com/spreadsheet/formResponse?formkey=dEtNRWtQak5wZ2FPUjRjQzktNjdqb1E6MA&amp;ifq" method="POST" id="ss-form">
+                <div id='message'></div>
+                <p>Fields with a <span class='required'></span> are required.</p>
+                <div class="form-entry">
+                    <label class="title required" for="parent_last_name">Parent Last Name</label>
+                    <input type="text" value="" class="required" id="parent_last_name"/>
+                </div>
+                <div class="form-entry">
+                    <label class="title required" for="parent_first_name">Parent First Name</label>
+                    <input type="text" value="" class="required" id="parent_first_name"/>
+                </div>
+                <fieldset id='phones'>
+                    <legend><span class='required'></span>Must enter at least one</legend>
+                    <div class="form-entry">
+                        <label class="title" for="home_phone_number">Home Phone Number</label>
+                        <input type="text" value="" class="" id="home_phone_number"/>
+                    </div>
+                    <div class="form-entry">
+                        <label class="title" for="cell_phone_number">Cell Phone Number</label>
+                        <input type="text" value="" class="" id="cell_phone_number"/>
+                    </div>
+                </fieldset>
+                <div class="form-entry">
+                    <label class="title" for="other_phone_number">Other Phone Number</label>
+                    <input type="text" value="" class="" id="other_phone_number"/>
+                </div>
+                <div class="form-entry">
+                    <label class="title" for="isTeaching">Teaching this Period?</label>
+                    <input type="checkbox" value="" class='' id="isTeaching"/>
+                </div>
+                <div class="form-entry">
+                    <label class="directions" for="notes">Would you like assist with any classes? If so, which ones?</label>
+                    <textarea rows='3' cols='55' class='' id="helping_preferences"></textarea>
+                </div>
+                <div class="form-entry">
+                    <label class="directions" for="notes">Comments for the co-op committee.</label>
+                    <textarea rows='3' cols='55' class='' id="notes_committee"></textarea>
+                </div>
+                <div class="form-entry">
+                    <label class="title required" for="number_children">Number of Children</label>
+                    <select class='required' id="number_children">
+                        <option value='-1'>Choose number of children...</option>
+                        <option value='1'>1</option>
+                        <option value='2'>2</option>
+                        <option value='3'>3</option>
+                        <option value='4'>4</option>
+                        <option value='5'>5</option>
+                        <option value='6'>6</option>
+                        <option value='7'>7</option>
+                        <option value='8'>8</option>
+                        <option value='9'>9</option>
+                        <option value='10'>10</option>
+                    </select>
+                </div>
+                <div id='child_entries'></div>
+                <input type="submit" onclick='return CheckFields();' name="submit" value="Submit"/>
+            </form>
+        </div>
+        <div id='overlay'></div>
+        <div id='summary'>
+            <p>You are enrolling the following students:</p>
+            <table cellpadding=4 id='courses'>
+                <thead>
+                    <td class='name'>Name</td>
+                    <td class='choice'>First Period</td>
+                    <td class='choice'>Second Period</td>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <p>Is this correct?</p>
+            <button id='save' onclick='SubmitFields(true);'>Yes</button>
+            <button id='cancel' onclick='SubmitFields(false);'>No</button>
+        </div>
+        <div id='course_description'></div>
+        <script type='text/javascript' src='../javascript/cheer.js'></script>
+        <script type='text/javascript' src='https://spreadsheets.google.com/feeds/list/0Avsje_1JuEHmdEtQYXZ4MGw0U0ZYYUx1RlhiVGtuTEE/od6/public/basic?alt=json-in-script&callback=GetFirstPeriod'></script>
+        <script type='text/javascript' src='https://spreadsheets.google.com/feeds/list/0Avsje_1JuEHmdHNxUFUyYUFtaXI2R1ZaREZ1ZXpUM2c/od6/public/basic?alt=json-in-script&callback=GetSecondPeriod'></script>
+    </body>
+</html>

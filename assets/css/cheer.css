@@ -1,0 +1,259 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,b, u, i, center,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+html, body {
+}
+body {
+    background-color: #FFF;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+}
+div#wrapper {
+    position: relative;
+    margin:0 auto;
+    height:100%;
+    color:#1C1733;
+    width: 760px;
+    border-bottom: 0;
+    border-top: 0;
+}
+div#topknot {
+    width:100%;
+    height:50px;
+    background: url('pencils.png') #4A6BA2;
+    background-size: 8%;
+    margin-bottom: 20px;
+}
+div#header {
+    background-color: #F9EFB1;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    padding:30px 0px;
+    height: 40px;
+    border:1px solid #AAA;
+    -webkit-box-shadow: 4px 4px 5px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    4px 4px 5px rgba(50, 50, 50, 0.75);
+    box-shadow:         4px 4px 5px rgba(50, 50, 50, 0.75);
+    margin-bottom: 20px;
+}
+div#countdown {
+    position: absolute;
+    font-size: 20px;
+    text-align: center;
+    padding:5px 30px;
+    top:200px;
+    left:-100px;
+    width:900px;
+    line-height: 1.5;
+    font-weight: bold;
+    height: 60px;
+    border:1px solid #000;
+    background-color: #A64B4B;
+}
+div#countdown span#remaining {
+    font-size: 21px;
+    font-family: Courier New,monospace;
+    margin-left:15px;
+}
+div#message {
+    font-size: 16px;
+    color:#FF0000;
+    height:5px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: bold;
+}
+div#message > a {
+    color:inherit;
+}
+form#ss-form {
+    padding:20px 30px 20px;
+    border:1px solid #AAA;
+    background-color: #F9EFB1;
+    -webkit-box-shadow: 4px 4px 5px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    4px 4px 5px rgba(50, 50, 50, 0.75);
+    box-shadow:         4px 4px 5px rgba(50, 50, 50, 0.75);
+}
+div#child_entries {
+	margin-top: 5px;
+    display: none;
+}
+div.form-entry {
+    margin-top: 10px;
+    width:100%;
+}
+div.form-entry label {
+    color:#112233;
+    font-size: 14px;
+    line-height: 1.5;
+}
+div.form-entry label.title {
+    vertical-align: bottom;
+    margin-right: 10px;
+    display: block;
+    width: 140px;
+    float: left;
+    text-align: right;
+}
+div.form-entry.child label.title {
+    width:200px;
+}
+div.form-entry textarea {
+    margin-left: 150px;
+}
+div.form-entry.child textarea {
+    margin-left: 0px;
+}
+div.form-entry label.directions {
+    display: block;
+    margin-left:150px;
+}
+.required:after {
+    content: '*';
+    color:#FF0000;
+}
+div.form-entry input,div.form-entry select {
+    width:220px;
+}
+#phones {
+    border:2px solid #AAA;
+    margin:10px 0;
+    padding:4px 5px 10px;
+}
+.child_entry {
+    border:1px solid #000;
+    margin: 30px auto;
+    width:600px;
+    background: #FFF;
+    padding:0px 20px 15px;
+}
+.child_entry > .legend {
+    position: relative;
+    text-align: center;
+    width:80px;
+    top:-20px;
+    left:-10px;
+    border:1px solid #000;
+    background-color: #CCA383;
+    padding:6px;
+    font-weight: bold;
+}
+label.required.error, label.error {
+    color: #FF0000 !important;
+}
+input[type='submit'] {
+    font-size: 20px;
+    display: block;
+    margin: 50px auto;
+
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #000000;
+	padding: 8px 20px;
+	background: -moz-linear-gradient(
+		top,
+		#fce2a1 0%,
+		#ff7700);
+	background: -webkit-gradient(
+		linear, left top, left bottom,
+		from(#fce2a1),
+		to(#ff7700));
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	border: 1px solid #AAA;
+	-moz-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 5px rgba(153,77,11,0.6);
+	-webkit-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 5px rgba(153,77,11,0.6);
+	box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 5px rgba(153,77,11,0.6);
+	text-shadow:
+		0px -1px 3px rgba(255,255,255,0.8),
+		0px 1px 0px rgba(255,255,255,0.3);
+}
+div#course_description {
+    position: absolute;
+    display: none;
+    padding:3px;
+    width:200px;
+    border:2px solid #CCA383;
+    -moz-border-radius:8px;
+    -webkit-border-radius:8px;
+    border-radius:8px;
+    background-color: #FFF;
+}
+#overlay {
+    background-color: #000;
+    position: absolute;
+    left:0px;
+    top:0px;
+    width:100%;
+    height: 100%;
+    text-align: center;
+    opacity: 0.3;
+    z-index: 1000;
+    display: none;
+}
+#summary {
+    position: absolute;
+    display: none;
+    height: 500px;
+    width:600px;
+    background-color: #F9EFB1;
+    border: 3px solid #777;
+    z-index: 1001;
+    font-size: 14px;
+    padding:20px 10px;
+}
+#courses {
+    border:1px solid #AAA;
+    padding:5px;
+    width:100%;
+    margin:20px 4px;
+}
+#courses thead {
+    font-weight: bold;
+}
+#courses td.name {
+    overflow: hidden;
+    font-size: 12px;
+    width: 100px;
+    margin-top: 5px;
+}
+#courses td.choice {
+    overflow: hidden;
+    font-size: 12px;
+    width: 120px;
+}
