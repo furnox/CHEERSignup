@@ -67,9 +67,10 @@ function SubmitFields(correct) {
     var isTeaching=$('input#isTeaching').attr('checked')==='checked';
     var helpingPreferences=$('textarea#helping_preferences').val();
     var notesCommittee=$('textarea#notes_committee').val();
-    var notes=$('textarea#notes').val();
     var numberChildren=$('select#number_children').val();
     for (var index=0;index<numberChildren;index++) {
+        var privateNote=$('textarea#child_'+index+'_private_note').val();
+        var allergies=$('textarea#child_'+index+'_allergies').val();
         var childName=$('input#child_'+index+'_name').val();
         var childGrade=$('select#child_'+index+'_grade').val();
         var childAge=$('input#child_'+index+'_age').val();
@@ -77,7 +78,6 @@ function SubmitFields(correct) {
         var OnePTwoC=$('select#child_'+index+'_1P2C option:selected').val();
         var TwoPOneC=$('select#child_'+index+'_2P1C option:selected').val();
         var TwoPTwoC=$('select#child_'+index+'_2P2C option:selected').val();
-        var childNotes=$('textarea#child_'+index+'_notes').val();
         count++;
         $.ajax(
             {
@@ -91,8 +91,9 @@ function SubmitFields(correct) {
                     'otherNumber':encodeURIComponent(otherNumber),
                     'isTeaching':encodeURIComponent(isTeaching),
                     'notesCommittee':encodeURIComponent(notesCommittee),
-                    'notes':encodeURIComponent(notes),
                     'numberChildren':encodeURIComponent(numberChildren),
+                    'privateNote':encodeURIComponent(privateNote),
+                    'allergies':encodeURIComponent(allergies),
                     'childName':encodeURIComponent(childName),
                     'childGrade':encodeURIComponent(childGrade),
                     'childAge':encodeURIComponent(childAge),
@@ -100,7 +101,6 @@ function SubmitFields(correct) {
                     'OnePTwoC':encodeURIComponent(OnePTwoC),
                     'TwoPOneC':encodeURIComponent(TwoPOneC),
                     'TwoPTwoC':encodeURIComponent(TwoPTwoC),
-                    'childNotes':encodeURIComponent(childNotes)
                 },
                 dataType:'text',
                 error:
@@ -168,15 +168,16 @@ function FormatRemainingTime(time) {
     var seconds=Math.floor(time / second);
     return days+':'+hours+':'+(minutes<10?'0':'')+minutes+':'+(seconds<10?'0':'')+seconds;
 }
+
 jQuery(function($){
     $.ajax({
-        url:'http://www.bluesailstudio.com/GetTime.php',
+        url:'http://www.bluesailstudio.com/cheer/GetTime.php',
         success:
             function(data) {
-				var ts=parseInt($(data).find('t')[0].textContent);
-				if (isNaN(ts)) {
-					ts=parseInt(data.text);
-				}
+                var ts=parseInt($(data).find('t')[0].textContent);
+                if (isNaN(ts)) {
+                    ts=parseInt(data.text);
+                }
                 currentDateTime=new Date(ts);
                 var $countdown=$('div#countdown');
                 var diff=startDateTime.getTime()-currentDateTime.getTime();
@@ -218,6 +219,10 @@ jQuery(function($){
                     $childEntry.append($("<div class='form-entry child'></div>").append("<label class='title required' for='child_"+index+"_grade'>Grade</label>").append($grade.clone().attr('id','child_'+index+'_grade').addClass('required')));
                     // Age
                     $childEntry.append($("<div class='form-entry child'></div>").append("<label class='title' for='child_"+index+"_age'>Age</label>").append("<input type='text' value='' class='' id='child_"+index+"_age'/>"));
+                    // Private Note
+                    $childEntry.append($("<div class='form-entry child'></div>").append("<label class='title' for='child_"+index+"_private_note'>Private note to teachers</label>").append("<textarea rows='3' cols='30' class='' id='child_"+index+"_private_note'></textarea>"));
+                    // Allergies
+                    $childEntry.append($("<div class='form-entry child'></div>").append("<label class='title' for='child_"+index+"_allergies'>Child allergies</label>").append("<textarea rows='3' cols='30' class='' id='child_"+index+"_allergies'></textarea>"));
                     // 1P1C
                     $childEntry.append($("<div class='form-entry child'></div>").append("<label class='title' for='child_"+index+"_1P1C'>First Period, First Choice</label>").append($firstPeriod.clone().attr('id','child_'+index+'_1P1C')));
                     // 1P2C
@@ -226,9 +231,6 @@ jQuery(function($){
                     $childEntry.append($("<div class='form-entry child'></div>").append("<label class='title' for='child_"+index+"_2P1C'>Second Period, First Choice</label>").append($secondPeriod.clone().attr('id','child_'+index+'_2P1C')));
                     // 2P2C
                     $childEntry.append($("<div class='form-entry child'></div>").append("<label class='title' for='child_"+index+"_2P2C'>Second Period, Second Choice</label>").append($secondPeriod.clone().attr('id','child_'+index+'_2P2C')));
-                    // Child Notes
-                    $childEntry.append($("<div class='form-entry child'></div>").append("<label class='title' for='child_"+index+"_notes'>Child notes</label>").append("<textarea rows='3' cols='30' class='' id='child_"+index+"_notes'></textarea>"));
-
                     $childEntries.append($childEntry);
                 }
             }

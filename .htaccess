@@ -1,0 +1,17 @@
+Options +FollowSymlinks
+Options -Indexes
+
+RewriteEngine on
+RewriteBase /cheer
+
+RewriteCond %{REQUEST_URI} signup$
+RewriteRule signup$ assets/html/CHEER_signup.html [NC,L]
+
+RewriteCond %{REQUEST_URI} !assets
+RewriteRule (.*\.css)$ assets/css/$1 [NC,L]
+
+RewriteCond %{REQUEST_URI} !assets
+RewriteRule (.*\.js)$ assets/javascript/$1 [NC,L]
+
+RewriteCond %{REQUEST_URI} !assets
+RewriteRule (.*\.(?:png|ico))$ assets/images/$1 [NC,L]

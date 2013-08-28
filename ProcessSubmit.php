@@ -8,7 +8,7 @@ $otherNumber=$_POST['otherNumber'];
 $isTeaching=$_POST['isTeaching'];
 $helpingPreferences=$_POST['helpingPreferences'];
 $notesForCommittee=$_POST['notesCommittee'];
-$notesPrivate=$_POST['notesPrivate'];
+$privateNote=$_POST['privateNote'];
 $allergies=$_POST['allergies'];
 $numberChildren=$_POST['numberChildren'];
 $childName=$_POST['childName'];
@@ -37,7 +37,7 @@ $TwoPTwoC=$_POST['TwoPTwoC'];
 // First Period, Second Choice: entry.15.single
 // Second Period, First Choice: entry.16.single
 // Second Period, Second Choice: entry.17.single
-$params=sprintf("entry.0.single=%s&entry.1.single=%s&entry.2.single=%s&entry.4.single=%s&entry.5.single=%s&entry.6.single=%s&entry.7.single=%s&entry.8.single=%s&entry.9.single=%s&entry.10.single=%s&entry.11.single=%s&entry.12.single=%s&entry.13.single=%s&entry.14.single=%s&entry.15.single=%s&entry.16.single=%s&entry.17.single=%s",$familyName,$homeNumber,$isTeaching,$numberChildren,$childName,$childGrade,$childAge,$OnePOneC,$OnePTwoC,$TwoPOneC,$TwoPTwoC,$cellNumber,$otherNumber,$notes,$childNotes);
+$params=sprintf("entry.0.single=%s&entry.1.single=%s&entry.2.single=%s&entry.4.single=%s&entry.5.single=%s&entry.6.single=%s&entry.7.single=%s&entry.8.single=%s&entry.9.single=%s&entry.10.single=%s&entry.11.single=%s&entry.12.single=%s&entry.13.single=%s&entry.14.single=%s&entry.15.single=%s&entry.16.single=%s&entry.17.single=%s",$parentLastName,$parentFirstName,$homeNumber,$cellNumber,$otherNumber,$isTeaching,$helpingPreferences,$notesForCommittee,$privateNote,$allergies,$numberChildren,$childName,$childGrade,$childAge,$OnePOneC,$OnePTwoC,$TwoPOneC,$TwoPTwoC);
 $handle=curl_init();
 curl_setopt($handle,CURLOPT_URL,'https://docs.google.com/spreadsheet/formResponse?formkey=dG80clg2WkNqcEczMmNlY1E3ZmozaVE6MQ&amp;ifq');
 curl_setopt($handle,CURLOPT_POST,true);

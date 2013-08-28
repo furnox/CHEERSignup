@@ -8,24 +8,24 @@ article, aside, canvas, details, embed, figure, figcaption, footer, header, hgro
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-	display: block;
+    display: block;
 }
 body {
-	line-height: 1;
+    line-height: 1;
 }
 ol, ul {
-	list-style: none;
+    list-style: none;
 }
 blockquote, q {
-	quotes: none;
+    quotes: none;
 }
 blockquote:before, blockquote:after, q:before, q:after {
-	content: '';
-	content: none;
+    content: '';
+    content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 html, body {
@@ -34,22 +34,28 @@ body {
     background-color: #FFF;
     font-family: Arial, Helvetica, sans-serif;
     position: relative;
+    color: #005787;
 }
 div#wrapper {
     position: relative;
     margin:0 auto;
     height:100%;
-    color:#1C1733;
+    /*color:#1C1733;*/
     width: 760px;
     border-bottom: 0;
     border-top: 0;
 }
 div#topknot {
     width:100%;
-    height:50px;
-    background: url('pencils.png') #4A6BA2;
-    background-size: 8%;
+    height:40px;
+    background: url('carbon.png') #2C2C2C;
     margin-bottom: 20px;
+}
+header {
+    line-height: 1.4;
+    background: url('cheering_kids.png') no-repeat right center;
+    height: 90px;
+    border-bottom: 3px solid #003755;
 }
 div#header {
     background-color: #F9EFB1;

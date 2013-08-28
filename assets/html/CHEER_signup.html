@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>CHEER Co-op Signup Form</title>
+        <title>CHEER Homeschool Co-op Signup Form</title>
         <meta charset="iso-8859-1"/>
-	<link type='text/css' rel='stylesheet' href='../css/cheer.css'/>
+	<link type='text/css' rel='stylesheet' href='cheer.css'/>
         <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
-        <script type='text/javascript' src='../javascript/moment.min.js'></script>
+        <script type='text/javascript' src='moment.min.js'></script>
     </head>
     <body>
         <div id='topknot'></div>
         <div id='wrapper'>
-            <div id='header'>CHEER Co-op Signup - Fall 2013</div>
+            <header>
+		<h1>CHEER Homeschool Co-op</h1>
+		<h2>Signup - Fall 2013</h2>
+	    </header>
             <div id='countdown'>
                 <p>Signup will begin <span id='begin'></span></p>
                 <p>Time remaining: <span id='remaining'></span></p>
@@ -89,7 +92,7 @@
             <button id='cancel' onclick='SubmitFields(false);'>No</button>
         </div>
         <div id='course_description'></div>
-        <script type='text/javascript' src='../javascript/cheer.js'></script>
+        <script type='text/javascript' src='cheer.js'></script>
         <script type='text/javascript' src='https://spreadsheets.google.com/feeds/list/0Avsje_1JuEHmdEtQYXZ4MGw0U0ZYYUx1RlhiVGtuTEE/od6/public/basic?alt=json-in-script&callback=GetFirstPeriod'></script>
         <script type='text/javascript' src='https://spreadsheets.google.com/feeds/list/0Avsje_1JuEHmdHNxUFUyYUFtaXI2R1ZaREZ1ZXpUM2c/od6/public/basic?alt=json-in-script&callback=GetSecondPeriod'></script>
     </body>
