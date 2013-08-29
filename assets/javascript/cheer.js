@@ -1,22 +1,24 @@
-var $firstPeriod=$("<select></select>");
-var $secondPeriod=$("<select></select>");
-var $grade=$("<select></select>").append("<option value='-1'>Choose a grade...</option>").append("<option value='P'>Preschool</option>").append("<option value='K'>Kindergarten</option>").append("<option value='1'>First</option>").append("<option value='2'>Second</option>").append("<option value='3'>Third</option>").append("<option value='4'>Fourth</option>").append("<option value='5'>Fifth</option>").append("<option value='6'>Sixth</option>").append("<option value='7'>Seventh</option>").append("<option value='8'>Eighth</option>").append("<option value='9'>Ninth</option>").append("<option value='10'>Tenth</option>").append("<option value='11'>Eleventh</option>").append("<option value='12'>Twelfth</option>");
+var google=new IGoogle();
 
-function ParseGoogleDocData(data,$period) {
-	$("<option value='-1'>Choose a course...</option>").appendTo($period);
-	for (var index=0;index<data.feed.entry.length;index++) {
-		var datum=data.feed.entry[index];
-		var course=datum.title.$t;
-		var desc=datum.content.$t.replace('coursedescription: ','').replace("'","&apos;");
-		$("<option value='"+course+"' class='course' desc='"+desc+"'>"+course+"</option>").appendTo($period);
-	}
-}
-function GetFirstPeriod(data) {
-    ParseGoogleDocData(data,$firstPeriod);
-}
-function GetSecondPeriod(data) {
-    ParseGoogleDocData(data,$secondPeriod);
-}
+//var $firstPeriod=$("<select></select>");
+//var $secondPeriod=$("<select></select>");
+//var $grade=$("<select></select>").append("<option value='-1'>Choose a grade...</option>").append("<option value='P'>Preschool</option>").append("<option value='K'>Kindergarten</option>").append("<option value='1'>First</option>").append("<option value='2'>Second</option>").append("<option value='3'>Third</option>").append("<option value='4'>Fourth</option>").append("<option value='5'>Fifth</option>").append("<option value='6'>Sixth</option>").append("<option value='7'>Seventh</option>").append("<option value='8'>Eighth</option>").append("<option value='9'>Ninth</option>").append("<option value='10'>Tenth</option>").append("<option value='11'>Eleventh</option>").append("<option value='12'>Twelfth</option>");
+//
+//function ParseGoogleDocData(data,$period) {
+//	$("<option value='-1'>Choose a course...</option>").appendTo($period);
+//	for (var index=0;index<data.feed.entry.length;index++) {
+//		var datum=data.feed.entry[index];
+//		var course=datum.title.$t;
+//		var desc=datum.content.$t.replace('coursedescription: ','').replace("'","&apos;");
+//		$("<option value='"+course+"' class='course' desc='"+desc+"'>"+course+"</option>").appendTo($period);
+//	}
+//}
+//function GetFirstPeriod(data) {
+//    ParseGoogleDocData(data,$firstPeriod);
+//}
+//function GetSecondPeriod(data) {
+//    ParseGoogleDocData(data,$secondPeriod);
+//}
 var startDateTime=new Date(2013,0,31,9,0,0,0);
 var currentDateTime;
 var overlay;
@@ -224,13 +226,13 @@ jQuery(function($){
                     // Allergies
                     $childEntry.append($("<div class='form-entry child'></div>").append("<label class='title' for='child_"+index+"_allergies'>Child allergies</label>").append("<textarea rows='3' cols='30' class='' id='child_"+index+"_allergies'></textarea>"));
                     // 1P1C
-                    $childEntry.append($("<div class='form-entry child'></div>").append("<label class='title' for='child_"+index+"_1P1C'>First Period, First Choice</label>").append($firstPeriod.clone().attr('id','child_'+index+'_1P1C')));
+                    $childEntry.append($("<div class='form-entry child'></div>").append("<label class='title' for='child_"+index+"_1P1C'>First Period, First Choice</label>").append(google.GetFirstPeriod().clone().attr('id','child_'+index+'_1P1C')));
                     // 1P2C
-                    $childEntry.append($("<div class='form-entry child'></div>").append("<label class='title' for='child_"+index+"_1P2C'>First Period, Second Choice</label>").append($firstPeriod.clone().attr('id','child_'+index+'_1P2C')));
+                    $childEntry.append($("<div class='form-entry child'></div>").append("<label class='title' for='child_"+index+"_1P2C'>First Period, Second Choice</label>").append(google.GetFirstPeriod().clone().attr('id','child_'+index+'_1P2C')));
                     // 2P1C
-                    $childEntry.append($("<div class='form-entry child'></div>").append("<label class='title' for='child_"+index+"_2P1C'>Second Period, First Choice</label>").append($secondPeriod.clone().attr('id','child_'+index+'_2P1C')));
+                    $childEntry.append($("<div class='form-entry child'></div>").append("<label class='title' for='child_"+index+"_2P1C'>Second Period, First Choice</label>").append(google.GetSecondPeriod().clone().attr('id','child_'+index+'_2P1C')));
                     // 2P2C
-                    $childEntry.append($("<div class='form-entry child'></div>").append("<label class='title' for='child_"+index+"_2P2C'>Second Period, Second Choice</label>").append($secondPeriod.clone().attr('id','child_'+index+'_2P2C')));
+                    $childEntry.append($("<div class='form-entry child'></div>").append("<label class='title' for='child_"+index+"_2P2C'>Second Period, Second Choice</label>").append(google.GetSecondPeriod().clone().attr('id','child_'+index+'_2P2C')));
                     $childEntries.append($childEntry);
                 }
             }

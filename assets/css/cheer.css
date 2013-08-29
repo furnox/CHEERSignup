@@ -101,20 +101,23 @@ div#message > a {
     color:inherit;
 }
 form#ss-form {
-    padding:20px 30px 20px;
-    border:1px solid #AAA;
-    background-color: #F9EFB1;
-    -webkit-box-shadow: 4px 4px 5px rgba(50, 50, 50, 0.75);
-    -moz-box-shadow:    4px 4px 5px rgba(50, 50, 50, 0.75);
-    box-shadow:         4px 4px 5px rgba(50, 50, 50, 0.75);
 }
 div#child_entries {
 	margin-top: 5px;
     display: none;
 }
 div.form-entry {
-    margin-top: 10px;
+    margin-top: 15px;
     width:100%;
+    margin-bottom: 15px;
+}
+div.form-entry.left {
+    width:50%;
+    float:left;
+}
+div.form-entry.right {
+    width:50%;
+    float:right;
 }
 div.form-entry label {
     color:#112233;
@@ -133,7 +136,6 @@ div.form-entry.child label.title {
     width:200px;
 }
 div.form-entry textarea {
-    margin-left: 150px;
 }
 div.form-entry.child textarea {
     margin-left: 0px;
@@ -142,17 +144,19 @@ div.form-entry label.directions {
     display: block;
     margin-left:150px;
 }
+div.form-entry-group {
+    float:left;
+    border:1px solid #DDD;
+    background-color:#F4F6FF;
+    width: 100%;
+    margin-bottom:15px;
+}
 .required:after {
     content: '*';
     color:#FF0000;
 }
 div.form-entry input,div.form-entry select {
     width:220px;
-}
-#phones {
-    border:2px solid #AAA;
-    margin:10px 0;
-    padding:4px 5px 10px;
 }
 .child_entry {
     border:1px solid #000;
